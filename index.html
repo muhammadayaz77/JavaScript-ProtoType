@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProtoType</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Creating Object 1
+    // student1 = {
+    //     firName : "Shahzad",
+    //     lasName : "Khan",
+    //     dob : 1995,
+    //     age: function(){
+    //         return new Date().getFullYear() - this.dob;
+    //     },
+    //     fullName : function(){
+    //         console.log(this.firName + " " + this.lasName);
+    //     }
+    // }
+    // // Creating Object 2
+    // // Don't repeat code
+    // student2 = {
+    //     firName : "Ayaz",
+    //     lasName : "Muhammad",
+    //     dob : 2000,
+    //     age: function(){
+            // return new Date().getFullYear() - this.dob;
+    //     },
+    //     fullName : function(){
+    //         console.log(this.firName + " " + this.lasName);
+    //     }
+
+    // }
+    // console.log(student1.firName);
+    // console.log(student1.firName);
+    // console.log(student1.age())
+    // console.log(student2.firName);
+    // console.log(student2.firName);
+    // console.log(student2.age());
+
+
+    // Inherite for reuseability like common function
+
+    main ={
+        fullName: function(){
+            console.log(this.firName + " " + this.lasName);
+        },
+        age : function(){
+            return new Date().getFullYear() - this.dob;
+        }
+    }
+    std1 = {
+        firName : "M",
+        lasName : "Ayaz",
+        dob : 2000
+    }
+    std2 = {
+        firName : "M",
+        lasName : "Ayaz",
+        dob : 2000
+    }
+    
+    std1.__proto__ = main;
+    std1.fullName();
+    std2.__proto__ = main;
+    console.log(std2.age());
+
+    Object.prototype.addsome = 'This is addsome';
+    let y = 'xyz'; 
+    console.log(y.addsome);
+
+</script>
+</html>
